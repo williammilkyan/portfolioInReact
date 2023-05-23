@@ -25,6 +25,9 @@ nav{
   height: 50px;
 }
 
+#contactNav:hover{
+  cursor: pointer;
+}
 
 
 .main-content {
