@@ -1,23 +1,26 @@
-import { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
+//import './app.css';
 
-import './App.css'
-import { NavComponent } from './NavComponent';
-import { MainComponent } from './MainComponent';
-import { FooterComponent } from './FooterComponent';
 function App() {
-  const [isShow, setIsShow] = useState(false);
-  function toggleIt(){
-    setIsShow(current => !current);
-  }
-
- 
   return (
-     <div className="all">
-          <NavComponent onClick={toggleIt}/>
-          <MainComponent />
-          <FooterComponent isShow={isShow}/>
-     </div>
-  )
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/projects" element={<Projects/>} />
+        <Route path="/contact" element={<Contact/>} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
 }
 
 export default App;
