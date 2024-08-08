@@ -2,6 +2,7 @@
 import React from 'react';
 import { Container, Typography, Box, Avatar } from '@mui/material';
 import { styled } from '@mui/system';
+import myPicture from '/src/pic/william.jpg';
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   display: 'flex',
@@ -27,7 +28,7 @@ const StyledAvatar = styled(Avatar)(({ theme }) => ({
 function About() {
   return (
     <StyledContainer>
-      <StyledAvatar alt="William Yan" src="[Your Image URL]" />
+      <StyledAvatar alt="William Yan" src={myPicture} />
       <StyledBox>
         <Typography variant="h4" component="h1" gutterBottom>
           About Me
